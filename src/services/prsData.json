@@ -1,0 +1,6 @@
+[
+  { "id": 1, "exerciseId": 1, "reps": 1, "series": 1, "weight": 190, "unit": "LBs" },
+  { "id": 2, "exerciseId": 1, "reps": 1, "series": 1, "weight": 180, "unit": "LBs" },
+  { "id": 3, "exerciseId": 1, "reps": 1, "series": 1, "weight": 170, "unit": "LBs" },
+  { "id": 4, "exerciseId": 1, "reps": 1, "series": 1, "weight": 160, "unit": "LBs" }
+]
