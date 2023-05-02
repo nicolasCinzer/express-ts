@@ -1,5 +1,5 @@
 import express from 'express'
-import { addPR, getPRbyId, getPRs } from '../services/prs'
+import { addPR, getPRbyId, getPRbyExersiceId, getPRs } from '../services/prs'
 
 const router = express.Router()
 
@@ -13,9 +13,10 @@ router.get('/:id', (req, res) => {
   res.send(PR)
 })
 
-router.get('/:exersiceId', (req, res) => {
-  const PR = getPRbyExersiceId(+req.params.exersiceId)
-  res.send(PR)
+router.get('/exercise/:exerciseId', (req, res) => {
+  const PRs = getPRbyExersiceId(+req.params.exerciseId)
+  console.log(PRs)
+  res.send(PRs)
 })
 
 router.post('/', (req, res) => {

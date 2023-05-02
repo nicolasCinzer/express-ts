@@ -6,9 +6,15 @@ let prs: PRs[] = prsData as PRs[]
 export const getPRs = (): PRs[] => prs
 
 export const getPRbyId = (id: number): PRs => {
-  const pr: PRs = prs.filter(pr => pr.id === id)[0]
+  const queriedPR: PRs = prs.filter(pr => pr.id === id)[0]
 
-  return pr
+  return queriedPR
+}
+
+export const getPRbyExersiceId = (exerciseId: number): PRs[] => {
+  const queriedPRs: PRs[] = prs.filter(pr => pr.exerciseId === exerciseId)
+
+  return queriedPRs
 }
 
 export const addPR = (prAttributes: any): PRs => {
@@ -31,12 +37,12 @@ export const addPR = (prAttributes: any): PRs => {
 
   const restOfAttributes = newPR(prAttributes)
 
-  const prEntry = {
+  const newPrEntry: PRs = {
     id: Math.max(...prs.map(pr => pr.id)) + 1,
     ...restOfAttributes
   }
 
-  prs.push(prEntry)
+  prs.push(newPrEntry)
 
-  return prEntry
+  return newPrEntry
 }
